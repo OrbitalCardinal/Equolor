@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equolors</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <style>
+        body {
+            background-color: {{ randomColor }};
+            color: white;
+        }
+
+        input {
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="color-input">
+        <div id="square-color"></div>
+        <div id="textbox">
+            <span>#</span>
+            <input type="text" maxlength="6" id="input-color">
+        </div>
+    </div>
+</body>
+
+    <script>
+        const colorInput = document.querySelector("#input-color");
+        colorInput.addEventListener('input', (event) => {
+            const text = event.target.value;
+            const squareColor = document.getElementById("square-color");
+            if(text.length == 6) {  
+                squareColor.style.backgroundColor = "#" + text;
+            } else {
+                squareColor.style.backgroundColor = "#ffffff";
+            }
+        })
+
+        
+    </script>
+</html>
